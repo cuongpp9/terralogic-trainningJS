@@ -6,6 +6,19 @@ const baseUrl = getBaseUrl();
 export function getUsers(){
 	return get ('users');
 }
+
+export function deleteUser(id){
+	//console.log("url:", baseUrl+ url);
+	return del(`users/${id}`);
+}
+
+function del(url){
+	const request = new Request(baseUrl + url, {
+		method: 'DELETE'
+	});
+	return fetch(request).then(onSuccess, onError);
+}
+
 function get(url){
 	//console.log("url:", baseUrl+ url);
 	return fetch(baseUrl+ url).then(onSuccess, onError);
