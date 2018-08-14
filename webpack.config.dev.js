@@ -10,14 +10,14 @@ export default {
   target: 'web', //client web app
   output: { //out file bundle to src folder
     path: path.resolve(__dirname, 'src'), //have get folder name src
-    publicPath: '/', //path output file bundle.js
+    publicPath: '/assets/', //path output file bundle.js
     filename: 'bundle.js' //name file output
   },
   plugins: [], //library support 3rd part
   module: { //module when loader file.
-    loaders: [
-      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
-      {test: /\.css$/, loaders: ['style','css']}
+    loaders: [ //Load module using bundle single file.
+      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel']}, //load js, babel module 
+      {test: /\.css$/, loaders: ['style','css']} //load css module
     ]
   }
 }

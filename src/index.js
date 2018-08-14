@@ -4,7 +4,6 @@ import { getUsers } from './api/userApi';
 import './index.css';
 
 const courseValue = numeral(1000).format('$0,00.00');
-debugger;
 console.log(`I would pay ${courseValue} for this awesome course!`); //eslint-disable-line no-console
 
 // Populate table of users via API call.
