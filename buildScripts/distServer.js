@@ -1,26 +1,17 @@
 import express from 'express'; //import express from express modules
 import path from 'path';
 import open from 'open';
-import webpack from 'webpack';
-import webpackConfig from '../webpack.config.dev';
-
+import compression from 'compression';
 /* eslint-disable no-console */
 
 var port = 3005 //port open web app
 var app = express(); //app using express
-const compileWebpack = webpack(webpackConfig); // Webpack
 
-//console.log("webpackConfig",webpackConfig);
-
-//Express Server Require create a mid server from webpack-dev-middleware => 
-app.use(require('webpack-dev-middleware')(compileWebpack, { //webpack-middleware: Multiple request
-	noInfo: true, //show file and module bundle
-	publicPath: webpackConfig.output.publicPath, //return file bundle in path
-}));
-////return file bundle.js
+app.use(express.static('dist'));
+app.use(compression());
 
 app.get('/', function(req, res){ //return file html using "respons method"
-	res.sendFile(path.join(__dirname, '../src/index.html')); //Server return file index.html in browser
+	res.sendFile(path.join(__dirname, '../dist/index.html')); //Server return file index.html in browser
 });
 
 app.get('/users', function(req, res){
