@@ -20,7 +20,9 @@ app.use(require('webpack-dev-middleware')(compileWebpack, { //webpack-middleware
 ////return file bundle.js
 
 app.get('/', function(req, res){ //return file html using "respons method"
-	res.sendFile(path.join(__dirname, '../src/index.html')); //Server return file index.html in browser
+	res.sendFile(path.join(__dirname, '../src/index.html')); 
+	//console.log("abc",path.resolve(__dirname, 'src/index'))
+	//Server return file index.html in browser
 });
 
 app.get('/users', function(req, res){

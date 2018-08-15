@@ -1,4 +1,5 @@
 import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   debug: true, //debug when run build
@@ -13,7 +14,13 @@ export default {
     publicPath: '/assets/', //path output file bundle.js
     filename: 'bundle.js' //name file output
   },
-  plugins: [], //library support 3rd part
+  plugins: [
+		// Create HTML file that includes reference to bundled JS.
+    new HtmlWebpackPlugin({
+			template: 'src/index.html',
+			inject: true
+		})
+	], //library support 3rd part
   module: { //module when loader file.
     loaders: [ //Load module using bundle single file.
       {test: /\.js$/, exclude: /node_modules/, loaders: ['babel']}, //load js, babel module 

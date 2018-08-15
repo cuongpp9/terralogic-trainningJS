@@ -2,6 +2,7 @@ import 'whatwg-fetch';
 import getBaseUrl from './baseUrl';
 
 const baseUrl = getBaseUrl();
+console.log(baseUrl);
 
 export function getUsers(){
 	return get ('users');
