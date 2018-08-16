@@ -15,7 +15,6 @@ export default {
     filename: 'bundle.js' //name file output
   },
   plugins: [
-		// Create HTML file that includes reference to bundled JS.
     new HtmlWebpackPlugin({
 			template: 'src/index.html',
 			inject: true

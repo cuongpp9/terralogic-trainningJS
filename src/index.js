@@ -20,6 +20,7 @@ getUsers().then(result => {
 		</tr>`
 	});
 
+	//insert usersBody from id users
 	global.document.getElementById('users').innerHTML = usersBody;
 
 	const deleteLinks = global.document.getElementsByClassName('deleteUser');

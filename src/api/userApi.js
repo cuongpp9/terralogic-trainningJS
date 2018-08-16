@@ -17,12 +17,12 @@ function del(url){
 	const request = new Request(baseUrl + url, {
 		method: 'DELETE'
 	});
-	return fetch(request).then(onSuccess, onError);
+	return fetch(request).then(onSuccess).catch(onError);
 }
 
 function get(url){
 	//console.log("url:", baseUrl+ url);
-	return fetch(baseUrl+ url).then(onSuccess, onError);
+	return fetch(baseUrl+ url).then(onSuccess).catch(onError);
 }
 
 function onSuccess(response){

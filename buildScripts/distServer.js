@@ -11,7 +11,7 @@ app.use(express.static('dist'));
 app.use(compression());
 
 app.get('/', function(req, res){ //return file html using "respons method"
-	res.sendFile(path.join(__dirname, '../dist/index.html')); //Server return file index.html in browser
+	res.sendFile(path.join(__dirname, '../dist/index.html')); //Server response file index.html in browser
 });
 
 app.get('/users', function(req, res){
