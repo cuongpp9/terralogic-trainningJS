@@ -4,7 +4,7 @@
 // }
 
 export default function getBaseUrl() {
-	return getQueryStringParameterByName('useMockApi') ? 'http://localhost:3006/' : 'https://safe-headland-32311.herokuapp.com/';
+	return getQueryStringParameterByName('userMockApi') ? 'http://localhost:3006/' : 'https://safe-headland-32311.herokuapp.com/';
   }
 	
   function getQueryStringParameterByName(name, url) {

@@ -6,8 +6,8 @@ import webpackConfig from '../webpack.config.dev';
 
 /* eslint-disable no-console */
 
-var port = 3005 //port open web app
-var app = express(); //app using express
+const port = 3005 //port open web app
+const app = express(); //app using express
 const compileWebpack = webpack(webpackConfig); // Webpack
 
 //console.log("webpackConfig",webpackConfig);
@@ -21,7 +21,6 @@ app.use(require('webpack-dev-middleware')(compileWebpack, { //webpack-middleware
 
 app.get('/', function(req, res){ //return file html using "respons method"
 	res.sendFile(path.join(__dirname, '../src/index.html')); 
-	//console.log("abc",path.resolve(__dirname, 'src/index'))
 	//Server return file index.html in browser
 });
 

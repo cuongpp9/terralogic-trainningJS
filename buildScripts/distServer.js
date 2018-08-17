@@ -4,8 +4,8 @@ import open from 'open';
 import compression from 'compression';
 /* eslint-disable no-console */
 
-var port = 3005 //port open web app
-var app = express(); //app using express
+const port = 3005 //port open web app
+const app = express(); //app using express
 
 app.use(express.static('dist'));
 app.use(compression());
