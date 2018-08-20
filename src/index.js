@@ -19,6 +19,7 @@ getUsers().then(result => {
 		<td>${user.email}</td>
 		</tr>`
 	});
+	
 
 	//insert usersBody from id users
 	global.document.getElementById('users').innerHTML = usersBody;
